@@ -4,12 +4,14 @@ import TextArea from "../../TextArea";
 import Answers from "./Answers";
 import { AiOutlineCheck } from "react-icons/ai";
 import { Question as QuestionType } from "../../types/types";
+import { MdOutlineCancel } from "react-icons/md";
 
 interface QuestionProps {
-  key: number;
+  key?: string;
   question: QuestionType;
   updateQuestion: (updatedQuestion: QuestionType) => void;
   index: number;
+  deleteQuestion: (index: number) => void;
 }
 
 export interface Answer {
@@ -21,6 +23,7 @@ const Question: React.FC<QuestionProps> = ({
   question,
   updateQuestion,
   index,
+  deleteQuestion,
 }) => {
   const borderColorOptions = [
     "#c82d44",
@@ -34,35 +37,52 @@ const Question: React.FC<QuestionProps> = ({
   const randomColor = () =>
     borderColorOptions[Math.floor(Math.random() * borderColorOptions.length)];
 
-  const [selectedBorderColor, setSelectedBorderColor] = useState(randomColor);
+  const [selectedBorderColor, setSelectedBorderColor] = useState<string>(
+    randomColor()
+  );
 
-  const [questionText, setquestionText] = useState(question.question);
-
-  const [currentAnswers, setCurrentAnswers] = useState(question.answers);
+  const [questionText, setQuestionText] = useState<string>(question.question);
+  const [currentAnswers, setCurrentAnswers] = useState<Answer[]>(
+    question.answers
+  );
 
   const handleInputChange = (name: string) => {
-    setquestionText(name);
+    setQuestionText(name);
   };
 
   useEffect(() => {
     const updatedQuestion = {
+      ...question,
       question: questionText,
       borderColor: selectedBorderColor,
-      answers: currentAnswers, // Preserve the current answers
+      answers: currentAnswers,
     };
-
-    // Call the callback to update the question in Quiz
     updateQuestion(updatedQuestion);
   }, [questionText, currentAnswers]);
 
   return (
     <div className="w-full text-white flex flex-col justify-center ">
       {/* top left label */}
-      <div
-        className={`w-32 rounded-tl-xl rounded rounded-tr-xl ml-4 p-1 text-center bg-[${selectedBorderColor}] transition duration-300 ease-in-out`}
-        style={{ backgroundColor: selectedBorderColor }} //border-[${selectedBorderColor}] doesn't work strangely
-      >
-        <span className="text-bold text-xl">Question {index + 1}</span>
+      <div className="flex justify-between">
+        <div
+          className={`w-32 rounded-tl-xl rounded rounded-tr-xl ml-4 p-1 text-center bg-[${selectedBorderColor}] transition duration-300 ease-in-out`}
+          style={{ backgroundColor: selectedBorderColor }} //border-[${selectedBorderColor}] doesn't work strangely
+        >
+          <span className="text-bold text-xl">Question {index + 1}</span>
+        </div>
+
+        {/* top right delete question */}
+        <div className="mt-auto">
+          <div
+            className={`px-2 rounded-tl-xl  rounded-tr-xl mr-4  text-center bg-[#c82d44] `}
+            onClick={() => deleteQuestion(index)}
+          >
+            <MdOutlineCancel
+              className="h-8 text-xl font-extrabol hover:transform hover:cursor-pointer hover:scale-110 transition duration-300 ease-in-out"
+              size={24}
+            />
+          </div>
+        </div>
       </div>
 
       <div

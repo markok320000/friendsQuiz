@@ -1,6 +1,6 @@
 const questionsData = [
   {
-    question: "What is my favorite book genre?",
+    question: "What is {name}'s favorite book genre?",
     borderColor: "#c82d44",
     answers: [
       {
@@ -26,7 +26,7 @@ const questionsData = [
     ],
   },
   {
-    question: "What is my favorite season of the year?",
+    question: "What is {name}'s favorite season of the year?",
     borderColor: "#3d72b5",
     answers: [
       {
@@ -52,7 +52,7 @@ const questionsData = [
     ],
   },
   {
-    question: "What is my favorite dessert?",
+    question: "What is {name}'s favorite dessert?",
     borderColor: "#309961",
     answers: [
       {
@@ -78,7 +78,7 @@ const questionsData = [
     ],
   },
   {
-    question: "What is my favorite holiday destination?",
+    question: "What is {name}'s favorite holiday destination?",
     borderColor: "#7646a6",
     answers: [
       {
@@ -104,7 +104,7 @@ const questionsData = [
     ],
   },
   {
-    question: "What is my favorite color?",
+    question: "What is {name}'s favorite color?",
     borderColor: "#ff5733",
     answers: [
       {
@@ -130,7 +130,7 @@ const questionsData = [
     ],
   },
   {
-    question: "What is my favorite movie genre?",
+    question: "What is {name}'s favorite movie genre?",
     borderColor: "#684b98",
     answers: [
       {
@@ -156,7 +156,7 @@ const questionsData = [
     ],
   },
   {
-    question: "What is my favorite animal?",
+    question: "What is {name}'s favorite animal?",
     borderColor: "#22cc88",
     answers: [
       {
@@ -182,7 +182,7 @@ const questionsData = [
     ],
   },
   {
-    question: "What is my favorite musical instrument?",
+    question: "What is {name}'s favorite musical instrument?",
     borderColor: "#db853e",
     answers: [
       {
@@ -208,7 +208,7 @@ const questionsData = [
     ],
   },
   {
-    question: "What is my favorite hobby?",
+    question: "What is {name}'s favorite hobby?",
     borderColor: "#47a8ff",
     answers: [
       {
@@ -229,6 +229,165 @@ const questionsData = [
       {
         id: 4,
         text: "Gardening",
+        isCorrect: false,
+      },
+    ],
+  },
+  {
+    question: "How many siblings does {name} have?",
+    borderColor: "#47a8ff",
+    answers: [
+      {
+        id: 1,
+        text: "None",
+        isCorrect: false,
+      },
+      {
+        id: 2,
+        text: "1",
+        isCorrect: false,
+      },
+      {
+        id: 3,
+        text: "2",
+        isCorrect: false,
+      },
+      {
+        id: 4,
+        text: "More than 2",
+        isCorrect: false,
+      },
+    ],
+  },
+  {
+    question:
+      "If {name} could wake up with a completely different permanent hair color, what would it be?",
+    borderColor: "#47a8ff",
+    answers: [
+      {
+        id: 1,
+        text: "Blonde",
+        isCorrect: false,
+      },
+      {
+        id: 2,
+        text: "Brunette",
+        isCorrect: false,
+      },
+      {
+        id: 3,
+        text: "Red",
+        isCorrect: false,
+      },
+      {
+        id: 4,
+        text: "Blue",
+        isCorrect: false,
+      },
+    ],
+  },
+  {
+    question:
+      "If {name} had to eat the same food for dinner every day, what would he/she pick?",
+    borderColor: "#47a8ff",
+    answers: [
+      {
+        id: 1,
+        text: "Pizza",
+        isCorrect: false,
+      },
+      {
+        id: 2,
+        text: "Sushi",
+        isCorrect: false,
+      },
+      {
+        id: 3,
+        text: "Burgers",
+        isCorrect: false,
+      },
+      {
+        id: 4,
+        text: "Pasta",
+        isCorrect: false,
+      },
+    ],
+  },
+  {
+    question: "How many kids will {name} have?",
+    borderColor: "#47a8ff",
+    answers: [
+      {
+        id: 1,
+        text: "None",
+        isCorrect: false,
+      },
+      {
+        id: 2,
+        text: "1",
+        isCorrect: false,
+      },
+      {
+        id: 3,
+        text: "2",
+        isCorrect: false,
+      },
+      {
+        id: 4,
+        text: "More than 2",
+        isCorrect: false,
+      },
+    ],
+  },
+  {
+    question: "What is {name}'s favorite ice cream flavor?",
+    borderColor: "#47a8ff",
+    answers: [
+      {
+        id: 1,
+        text: "Chocolate",
+        isCorrect: false,
+      },
+      {
+        id: 2,
+        text: "Vanilla",
+        isCorrect: false,
+      },
+      {
+        id: 3,
+        text: "Strawberry",
+        isCorrect: false,
+      },
+      {
+        id: 4,
+        text: "Mint Chocolate Chip",
+        isCorrect: false,
+      },
+    ],
+  },
+  {
+    question:
+      "If {name} has one hour to spend 1 million, where do you think he/she'd go first?",
+    borderColor: "#47a8ff",
+    answers: [
+      {
+        id: 1,
+        text: "Luxury Car Dealership",
+        isCorrect: false,
+      },
+      {
+        id: 2,
+        text: "High-End Jewelry Store",
+        isCorrect: false,
+      },
+      {
+        id: 3,
+        text: "Real Estate Office",
+        isCorrect: false,
+      },
+      {
+        id: 4,
+        text: "Travel Agency for a World Tour",
         isCorrect: false,
       },
     ],
